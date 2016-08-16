@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+            var socket = io();
+
+            socket.on('welcome', function(data) {
+                addMessage(data.message);
+
+                // Respond with a message including this clients' id sent from the server
+                socket.emit('i am client', {data: 'foo!', id: data.id});
+            });
+
+            socket.on('showDevices', function(devicelist){
+                var html = '';
+                var htmlprefix = '<table><thead><tr><th>Beacon ID</th><th>Device Id</th><th>Distance</th></tr></thead><tbody>'
+                var htmlsuffix = '</tbody></table>'
+                for(var i in devicelist){
+                    html = html + 
+                    '<tr><td>' + devicelist[i]['BeaconID'] +'</td><td>' + devicelist[i]['DeviceID'] + '</td><td>' + devicelist[i]['Distance'] + '</td></tr>';
+                }
+                document.getElementById('showdevicelist').innerHTML = htmlprefix + html + htmlsuffix;
+            });
+
+            socket.on('error', console.error.bind(console));
+            socket.on('message', console.log.bind(console));
+
+            function updateDevice(){
+                var beaconid = $('#beaconid').val();
+                var deviceid = $('#deviceid').val();
+                var distance = $('#distance').val();
+
+                socket.emit('updateDevice', {
+                    BeaconID : beaconid,
+                    DeviceID : deviceid,
+                    Distance : distance
+                });
+            }
+
+            function addMessage(message) {
+                var text = document.createTextNode(message),
+                    el = document.createElement('li'),
+                    messages = document.getElementById('messages');
+
+                el.appendChild(text);
+                messages.appendChild(el);
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <input type="text" id="beaconid" value="" placeholder="Beacon Id" />
+            <input type="text" id="deviceid" value="" placeholder="Device Id" />
+            <input type="text" id="distance" value="" placeholder="Distance" />
+            <button id="AddToDeviceList">Add Beacon</button>
+        </div>
+        <div id="showdevicelist">
+            <table>
+                <thead><tr>
+                    <th>Beacon ID</th>
+                    <th>Device Id</th>
+                    <th>Distance</th>
+                </tr></thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <ul id='messages'></ul>
+        <script type="text/javascript">
+        
+        $(document).ready(function(e){
+            $('#AddToDeviceList').click(function(e){
+                updateDevice();
+            })
+
+        });
+        </script>
+    </body>
+</html>

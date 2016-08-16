@@ -9,7 +9,7 @@ var assert = require('assert');
 var async = require('async');
 
 
-var mongourl = 'mongodb://localhost:27017/socketdb';
+var mongourl = 'mongodb://lotus:remote@ds161255.mlab.com:61255/lotusbeacon';
 //var mongourlwodb = 'mongodb://localhost:27017';
 MongoClient.connect(mongourl, function(err, db) {
   assert.equal(null, err);
@@ -152,4 +152,6 @@ io.on('connection', function(socket) {
     //setInterval(sendDevices, 5000);
 });
 
-app.listen(5200);
+app.listen(process.env.PORT || 3000, function(){
+  console.log("App started with Mongodb");
+});

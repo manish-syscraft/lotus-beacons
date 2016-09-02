@@ -1,0 +1,57 @@
+{
+  "name": "ckeditor",
+  "version": "4.5.7",
+  "description": "JavaScript WYSIWYG web text editor.",
+  "main": "ckeditor.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckeditor/ckeditor-releases.git"
+  },
+  "keywords": [
+    "ckeditor",
+    "fckeditor",
+    "editor",
+    "wysiwyg",
+    "html",
+    "richtext",
+    "text",
+    "javascript"
+  ],
+  "author": {
+    "name": "CKSource",
+    "url": "http://cksource.com/"
+  },
+  "license": "For licensing, see LICENSE.md or http://ckeditor.com/license.",
+  "bugs": {
+    "url": "http://dev.ckeditor.com"
+  },
+  "homepage": "http://ckeditor.com",
+  "gitHead": "a55e90c4e4114c40169b054bbeb2190c3a62a055",
+  "_id": "ckeditor@4.5.7",
+  "scripts": {},
+  "_shasum": "2e40729ece586b3b97d57bfbb09fc2da239e7a4f",
+  "_from": "ckeditor@4.5.7",
+  "_npmVersion": "3.3.6",
+  "_nodeVersion": "5.0.0",
+  "_npmUser": {
+    "name": "cksource",
+    "email": "npm@cksource.com"
+  },
+  "dist": {
+    "shasum": "2e40729ece586b3b97d57bfbb09fc2da239e7a4f",
+    "tarball": "http://registry.npmjs.org/ckeditor/-/ckeditor-4.5.7.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "cksource",
+      "email": "npm@cksource.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-6-west.internal.npmjs.com",
+    "tmp": "tmp/ckeditor-4.5.7.tgz_1454608164344_0.5395343343261629"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/ckeditor/-/ckeditor-4.5.7.tgz",
+  "readme": "ERROR: No README data found!"
+}

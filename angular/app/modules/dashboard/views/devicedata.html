@@ -1,0 +1,27 @@
+<!--
+Author: Ranjithprabhu K
+Page Description: Dashboard Home page
+Date: 05 Jan 2016
+-->
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+           My Home Page
+        </h1>
+        <ol class="breadcrumb">
+            <li><a><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li class="active">Home</li>
+        </ol>
+    </section>
+    <!-- Main content -->
+        <table class="table">
+            <th>Beacon ID</th>
+            <th>Device ID</th>
+            <th>Distance</th>
+            <tr ng-repeat= "device in deviceData">
+                <td><input type='text' ng-model="device.BeaconID" /></td>
+                <td><input type='text' ng-model="device.DeviceID" /></td>
+                <td><input type='text' ng-model="device.Distance" /></td>
+            </tr>
+        </table>
+    </section><!-- /.content -->

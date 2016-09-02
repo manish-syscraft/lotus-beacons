@@ -1,0 +1,28 @@
+{
+  "name": "socket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "async": "^2.0.1",
+    "mongodb": "^2.2.6",
+    "node-gcm": "^0.14.4",
+    "socket.io": "^1.4.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aliasger-syscraft/lotus_beacons.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aliasger-syscraft/lotus_beacons/issues"
+  },
+  "homepage": "https://github.com/Aliasger-syscraft/lotus_beacons#readme"
+}
